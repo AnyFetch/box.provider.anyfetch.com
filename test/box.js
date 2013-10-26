@@ -29,7 +29,7 @@ describe("Box API wrapper", function() {
     });
   });
 
-  describe.skip('getAccessToken()', function() {
+  describe('getAccessToken()', function() {
     it("should fail on invalid refreshToken", function(done) {
       box.getAccessToken('invalid', function(err, accessToken) {
         err.should.not.eql(null);
@@ -40,7 +40,7 @@ describe("Box API wrapper", function() {
         done();
       });
     });
-    it("should return accessToken", function(done) {
+    it.skip("should return accessToken", function(done) {
       box.getAccessToken(config.test_refresh_token, function(err, _accessToken) {
         if(err) {
           throw err;
@@ -54,8 +54,8 @@ describe("Box API wrapper", function() {
     });
   });
 
-  describe.skip('listFolder()', function() {
-    it("should list content in folder", function(done) {
+  describe('listFolder()', function() {
+    it.skip("should list content in folder", function(done) {
       box.listFolder(0, accessToken, function(err, entries) {
         if(err) {
           throw err;
