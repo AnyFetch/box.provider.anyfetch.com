@@ -5,6 +5,8 @@ var box = require('../lib/provider-box/helpers/box');
 var config = require('../config/configuration.js');
 
 describe("Box API wrapper", function() {
+  var accessToken;
+
   describe('getConnectUrl()', function() {
     it("should redirect to box.com", function(done) {
       var url = box.getConnectUrl();
@@ -39,13 +41,28 @@ describe("Box API wrapper", function() {
       });
     });
     it("should return accessToken", function(done) {
-      box.getAccessToken(config.test_refresh_token, function(err, accessToken) {
+      box.getAccessToken(config.test_refresh_token, function(err, _accessToken) {
         if(err) {
           throw err;
         }
 
-        accessToken.should.not.eql(null);
-        
+        _accessToken.should.not.eql(null);
+        accessToken = _accessToken;
+
+        done();
+      });
+    });
+  });
+
+  describe('listFolder()', function() {
+    it("should list content in folder", function(done) {
+      box.listFolder(0, accessToken, function(err, entries) {
+        if(err) {
+          throw err;
+        }
+
+        entries.length.should.be.above(0);
+
         done();
       });
     });
