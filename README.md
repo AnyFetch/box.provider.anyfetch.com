@@ -34,3 +34,10 @@ export BOX_TEST_REFRESH_TOKEN="waiting for box"
 ```
 
 ## How does it work
+We firt get authorization from the Box.com user to use our API.
+We retrieve metadatas about every file in every folder of a Box user, using a recursive breadth-first-search.
+Each file is then sequentially downloaded (botlle-necked to 5 concurrent files) and uploaded to our indexer server.
+This indexer server, available on http://anyfetch.com, begins "hydrating" the document using the open source Tika project to retrieve a textual representation of the file.
+For images, we use Tesseract, a free OCR reader, to extract content.
+
+Finally, every piece of data is put into ElasticSearch for fast and accurate querying.
