@@ -8,7 +8,7 @@ Unlike its competitors, Box already offers a basic search interface. However, we
 
 We got to work, hoping to search in the contents of every document ; whether it be a Powerpoint Presentation, a picture from a sheet of paper or a markdown file, we wanted to generate a preview o the file and a meaningful snippet.
 
-Since Box offers a fully featured API (well.. it may lack a persistant `refresh_token` for tests!), we started coding in node.js.
+Since Box offers a fully featured API, we started coding in node.js.
 
 Nodejs is our tool of choice to write asynchronous code, allowing us to fetch the content of up to 15 folders at the same time while downloading files and uploading them to our indexing server.
 
@@ -41,3 +41,9 @@ This indexer server, available on http://anyfetch.com, begins "hydrating" the do
 For images, we use Tesseract, a free OCR reader, to extract content.
 
 Finally, every piece of data is put into ElasticSearch for fast and accurate querying.
+
+## About the tests
+Test suite is quite poor, but Box.com API forbids using the same `refresh_token` twice, so you need to request a new set of tokens every time you want to run the tests.
+The only alternative is to write tests with the access_token, but they'll break after an hour :(
+
+We spoke with the Box staff, thay said they may add a developer refresh_token with infinite lifespan... can't wait.
