@@ -16,12 +16,12 @@ describe("Box API wrapper", function() {
     });
   });
 
-  describe('getRefreshToken()', function() {
+  describe('getTokens()', function() {
     it("should fail on invalid authorization_grant", function(done) {
-      box.getRefreshToken('invalid', function(err, refreshToken) {
+      box.getTokens('invalid', function(err, tokens) {
         err.should.not.eql(null);
-        if(refreshToken) {
-          throw new Error("No refreshToken should be returned");
+        if(tokens) {
+          throw new Error("No tokens should be returned");
         }
 
         done();
@@ -29,25 +29,25 @@ describe("Box API wrapper", function() {
     });
   });
 
-  describe('getAccessToken()', function() {
+  describe('getNewTokens()', function() {
     it("should fail on invalid refreshToken", function(done) {
-      box.getAccessToken('invalid', function(err, accessToken) {
+      box.getNewTokens('invalid', function(err, tokens) {
         err.should.not.eql(null);
-        if(accessToken) {
-          throw new Error("No refreshToken should be returned");
+        if(tokens) {
+          throw new Error("No tokens should be returned");
         }
 
         done();
       });
     });
-    it.skip("should return accessToken", function(done) {
-      box.getAccessToken(config.test_refresh_token, function(err, _accessToken) {
+    it.skip("should return tokens", function(done) {
+      box.getNewTokens(config.test_refresh_token, function(err, tokens) {
         if(err) {
           throw err;
         }
 
-        _accessToken.should.not.eql(null);
-        accessToken = _accessToken;
+        tokens.should.not.eql(null);
+        accessToken = tokens.access_token;
 
         done();
       });
