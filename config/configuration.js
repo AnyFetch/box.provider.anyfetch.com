@@ -37,10 +37,7 @@ module.exports = {
   max_concurrency: process.env.BOX_MAX_CONCURRENCY || 5,
   workers: process.env.WORKERS || 2,
 
-  test_tokens: {
-    oauth_token_secret: process.env.BOX_TEST_OAUTH_TOKEN_SECRET,
-    oauth_token: process.env.BOX_TEST_OAUTH_TOKEN,
-    uid: process.env.BOX_TEST_UID,
-  },
+  test_refresh_token: process.env.BOX_TEST_REFRESH_TOKEN,
+
   test_cursor: process.env.BOX_TEST_CURSOR
 };
