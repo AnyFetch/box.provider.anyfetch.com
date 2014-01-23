@@ -26,9 +26,9 @@ export BOX_SECRET="your_box_secret"
 export BOX_CALLBACK_URL="http://localhost:8000/init/callback"
 export BOX_CONNECT_URL="http://localhost:8000/init/connect"
 
-# Cluestr app id and secret
-export BOX_CLUESTR_ID=""
-export BOX_CLUESTR_SECRET=""
+# AnyFetch app id and secret
+export BOX_ANYFETCH_ID=""
+export BOX_ANYFETCH_SECRET=""
 
 export BOX_TEST_REFRESH_TOKEN="waiting for box"
 ```

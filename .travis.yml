@@ -8,7 +8,7 @@ env:
   global:
   - BOX_CALLBACK_URL="http://localhost:8000/init/callback"
   - BOX_CONNECT_URL="http://localhost:8000/init/connect"
-  - BOX_CLUESTR_ID="cluestr-app-id"
-  - BOX_CLUESTR_SECRET="cluestr-app-secret"
+  - BOX_ANYFETCH_ID="anyfetch-app-id"
+  - BOX_ANYFETCH_SECRET="anyfetch-app-secret"
   - secure: mhH4AggDgTPtONT7WNQs9P98h/1t6pc+HCks+LZvAIoI29UkUcsKVreAdXX1nttNWsfhZ6t3fCwETUZDrNinR3laNv7a4vhJSgBQqrR5KB1C82Md+lqyxsL8ygg33AQtcc5BID9XpbA5OgomraYht8vxIDH2nIZJnoEWatZ6gBY=
   - secure: OlNpCeTluvY+9CQQ4XRJRu6CEEV2A/Ku5+oqVsnMsSsfd1WLRGC7Ml8kLKbR8Qb0jSBDQTojBtg2GulXhWiXs+p1rPExqmv2nGV9/T++AiDqk6MoMMelDUrqH2NfCBe64ftupjnbU0GMNzJ+kGL/wLUXqPs/RK9SeblywjAHh0E=
