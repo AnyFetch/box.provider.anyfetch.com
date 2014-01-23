@@ -31,8 +31,8 @@ module.exports = {
   box_callback: process.env.BOX_CALLBACK_URL,
   box_connect: process.env.BOX_CONNECT_URL,
 
-  cluestr_id: process.env.BOX_CLUESTR_ID,
-  cluestr_secret: process.env.BOX_CLUESTR_SECRET,
+  anyfetch_id: process.env.BOX_ANYFETCH_ID,
+  anyfetch_secret: process.env.BOX_ANYFETCH_SECRET,
 
   max_concurrency: process.env.BOX_MAX_CONCURRENCY || 5,
   workers: process.env.WORKERS || 2,
