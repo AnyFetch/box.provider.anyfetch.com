@@ -20,7 +20,7 @@
   "main": "./lib/provider-box",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Papiel/box.provider.anyfetch.com"
+    "url": "https://github.com/Papiel/box-provider.anyfetch.com"
   },
   "keywords": [
     "anyfetch",
