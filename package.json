@@ -32,7 +32,8 @@
     "request": "2.34.x",
     "anyfetch-provider": "0.x.x",
     "sspawn": "0.1.1",
-    "newrelic": "1.x.x"
+    "newrelic": "1.x.x",
+    "dotenv": "^0.4.0"
   },
   "devDependencies": {
     "mocha": "1.18.x",
